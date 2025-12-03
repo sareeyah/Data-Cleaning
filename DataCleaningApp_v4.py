@@ -126,25 +126,25 @@ if uploaded_file:
         st.warning("⚠ No missing values found - but duplicate rows detected")
 
     # -------- Missing Values Check --------
-    st.subheader("🔍 Missing Values Check")
-    missing_table = df.isnull().sum().reset_index()
-    missing_table.columns = ["Column", "Missing Values"]
-    st.dataframe(missing_table)
+    #st.subheader("🔍 Missing Values Check")
+    #missing_table = df.isnull().sum().reset_index()
+    #missing_table.columns = ["Column", "Missing Values"]
+    #st.dataframe(missing_table)
 
     # ---- Column Type Detection ----
-    numeric_columns = df.select_dtypes(include=['int', 'float']).columns.tolist()
-    categorical_columns = df.select_dtypes(exclude=['int', 'float']).columns.tolist()
+    #numeric_columns = df.select_dtypes(include=['int', 'float']).columns.tolist()
+    #categorical_columns = df.select_dtypes(exclude=['int', 'float']).columns.tolist()
 
-    st.markdown("### 📘 Column Type Summary")
-    st.markdown(
-        f"""
-        <div style="padding:15px; border-radius:10px; background-color:#002455; color:white;">
-             <b>🔢 Numerical Columns:</b> {numeric_columns}<br>
-             <b>🔠 Categorical Columns:</b> {categorical_columns}
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    #st.markdown("### 📘 Column Type Summary")
+    #st.markdown(
+    #    f"""
+    #    <div style="padding:15px; border-radius:10px; background-color:#002455; color:white;">
+    #         <b>🔢 Numerical Columns:</b> {numeric_columns}<br>
+    #         <b>🔠 Categorical Columns:</b> {categorical_columns}
+    #    </div>
+    #    """,
+    #    unsafe_allow_html=True
+    #)
 
     # -------- Handle Numerical Missing Values --------
     st.subheader("🔢 Handle Numerical Missing Values")
