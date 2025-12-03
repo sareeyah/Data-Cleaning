@@ -121,6 +121,9 @@ if uploaded_file:
         st.success("🎉 Your dataset is already clean! No missing values or duplicate rows found.")
         st.stop()
         
+    # Dataset has duplicates but no missing values
+    if total_missing == 0 and duplicate_count > 0:
+        st.warning("⚠ No missing values found - but duplicate rows detected")
 
     # -------- Missing Values Check --------
     st.subheader("🔍 Missing Values Check")
